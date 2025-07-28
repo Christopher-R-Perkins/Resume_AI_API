@@ -66,6 +66,7 @@ def bullet_writing_agent_system_prompt(ctx: RunContext[BulletAgentDeps]) -> str:
         - A two line bullet point should be under ~200 characters
         - A three line bullet point should be under ~250 characters
         - At least half of the bullet points should be one line, I will burn your house down if you don't follow this rule.
+        - You should try to get one bullet as short as possible, sub-70 is good, but still be effective.
     - If a number is provided, you should try to use it in the bullet point
         - If the number is not relevant or absurd, you can skip it. Your house will not be burned down for this.
         - If the number is relevant and makes sense, you should use it in the bullet point.
