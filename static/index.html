@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Bullet Generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resume Bullet Generator</h1>
+            <p>Create powerful resume bullet points with AI assistance</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('new-bullet')">New Bullet</button>
+            <button class="tab" onclick="switchTab('history')">History</button>
+        </div>
+
+        <!-- New Bullet Tab -->
+        <div id="new-bullet" class="tab-content active">
+            <div class="new-bullet-container">
+                <div class="form-section">
+                    <h3>Create New Bullet Point</h3>
+                    <form id="bulletForm">
+                        <div class="form-group">
+                            <label for="accomplished">What was accomplished:</label>
+                            <textarea id="accomplished" name="accomplished" required placeholder="Describe what you accomplished..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="measured">How was it measured:</label>
+                            <textarea id="measured" name="measured" required placeholder="Describe how success was measured..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="task">Task or Project:</label>
+                            <textarea id="task" name="task" required placeholder="Describe the task or project..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="keyword">Keyword (optional):</label>
+                            <input type="text" id="keyword" name="keyword" placeholder="Add a specific keyword...">
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span id="submitText">Generate Bullet Points</span>
+                            <div class="loading-spinner" id="loadingSpinner"></div>
+                        </button>
+                    </form>
+                </div>
+                <div class="results-section">
+                    <h3>Generated Bullet Points</h3>
+                    <div id="resultsContainer">
+                        <p style="color: #666; font-style: italic;">Fill out the form and submit to generate bullet points...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="history" class="tab-content">
+            <div class="history-container">
+                <div class="history-list">
+                    <h3>Previous Bullets</h3>
+                    <div id="historyList">
+                        <p style="color: #666; font-style: italic;">No previous bullets found...</p>
+                    </div>
+                    <button class="clear-history-btn" onclick="clearHistory()">Clear History</button>
+                </div>
+                <div class="history-details">
+                    <h3>Bullet Details</h3>
+                    <div id="historyDetails">
+                        <div class="no-selection">Select a bullet from the list to view details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html> 
