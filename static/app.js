@@ -26,6 +26,10 @@ function switchTab(tabName) {
     // Refresh history if switching to history tab
     if (tabName === 'history') {
         loadHistory();
+        // If there was a previously selected item, maintain that selection
+        if (selectedHistoryIndex >= 0 && selectedHistoryIndex < bulletHistory.length) {
+            displayHistoryDetails(bulletHistory[selectedHistoryIndex]);
+        }
     }
 }
 
@@ -143,6 +147,9 @@ function saveToHistory(input, output) {
     }
 
     localStorage.setItem('bulletHistory', JSON.stringify(bulletHistory));
+    
+    // Don't automatically select the new bullet - maintain current selection
+    // selectedHistoryIndex remains unchanged
 }
 
 // Load from localStorage
